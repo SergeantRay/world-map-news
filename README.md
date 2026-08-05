@@ -11,7 +11,8 @@ A **live world map of today's top news** — war, economy, climate, science, tec
 ## ✨ Features
 
 - **Everything on one map** — every story is geolocated to an exact city (a dot) or a country (a colored border)
-- **Overlapping stories** — a bullseye of colored rings: newest story = smallest ring, same time → war is smallest; click it to list and pick
+- **Topic-colored dots** — each dot's color tells the topic at a glance (red = war, purple = politics, blue = tech…). When several stories share one spot, the dot splits like a **pie — one wedge per topic**; click it to list and pick
+- **Live filtering** — toggle a topic chip and dots **recolor live**: pick only Politics and a mixed dot turns fully purple
 - **Zoom & pan** — scroll to zoom (up to 10×), drag to pan, one-click reset
 - **Dark mode** — 🌙 toggle in the top-right corner (remembered)
 - **Filter by topic** — click a tag to toggle it, long-press to show only that topic
