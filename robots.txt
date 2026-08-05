@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sergeantray.github.io/world-map-news/sitemap.xml

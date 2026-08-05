@@ -1,65 +1,48 @@
-# 🌍 World News Map — GitHub Pages 发布说明
+# 🌍 World News Map
 
-这个文件夹已初始化好 git 仓库并提交完毕。你只需要做 **2 步**：
+A **live world map of today's top news** — war, economy, climate, science, tech, politics and sports. Click any dot or country border to read the story; zoom in anywhere with your scroll wheel; flip to dark mode with one tap.
 
----
+**👉 Live at: https://sergeantray.github.io/world-map-news/**
 
-## 第 1 步：在 GitHub 上建一个仓库
-
-1. 打开 https://github.com/new （需要登录你的 GitHub 账号；没有就免费注册一个）
-2. **Repository name** 填：`world-news-map`（随意，但记下这个名字）
-3. 选 **Public**（Public = 任何人都能访问）
-4. 其它全部默认，点 **Create repository**
-
-## 第 2 步：把文件推上去（二选一）
-
-### 方式 A：命令行推送（推荐，以后更新也用它）
-
-在「终端」里运行（把 `你的用户名` 换成你的 GitHub 用户名）：
-
-```bash
-cd /Users/celinezl/Desktop/Publish/world-news-map
-git remote add origin https://github.com/你的用户名/world-news-map.git
-git branch -M main
-git push -u origin main
-```
-
-第一次会弹出窗口让你登录 GitHub（浏览器授权），完成即可。
-
-### 方式 B：网页直接上传（不装任何东西）
-
-1. 打开你刚建的仓库页面：`https://github.com/你的用户名/world-news-map`
-2. 点 **Add file → Upload files**
-3. 把 `/Users/celinezl/Desktop/Publish/world-news-map/index.html` 拖进去
-4. 点 **Commit changes**
+![poster](poster.png)
 
 ---
 
-## 第 3 步：打开 Pages（只需要做一次）
+## ✨ Features
 
-1. 进入仓库 **Settings → Pages**（左侧栏）
-2. **Build and deployment → Source** 选 **Deploy from a branch**
-3. **Branch** 选 `main`，文件夹选 `/ (root)`，点 **Save**
-4. 等 1–2 分钟，你的地图就上线了：
+- **Everything on one map** — every story is geolocated to an exact city (a dot) or a country (a colored border)
+- **Overlapping stories** — a bullseye of colored rings: newest story = smallest ring, same time → war is smallest; click it to list and pick
+- **Zoom & pan** — scroll to zoom (up to 10×), drag to pan, one-click reset
+- **Dark mode** — 🌙 toggle in the top-right corner (remembered)
+- **Filter by topic** — click a tag to toggle it, long-press to show only that topic
+- **100% self-contained** — a single HTML file, no map library, no external assets, works offline
+- **Auto-updated daily** — fresh headlines every morning
 
-```
-https://你的用户名.github.io/world-news-map/
-```
+## 🗺️ How it works
 
-把链接发给任何人，打开就能看。
+- Country borders come from **Natural Earth** (public domain) — every country is its own SVG group, so the whole country highlights as one block
+- News is classified (War / Economy / Climate / Science / Tech / Sports / World), then a location is extracted: an exact place (e.g. a city, an earthquake zone) → a dot; a country-level story (e.g. "Japan's economy") → a colored border
+- The map is a pure **SVG generated in Python** — same projection for base map and markers, so nothing can drift
 
----
+## 🛠️ Tech
 
-## 🔄 以后怎么更新地图？
+| Piece | What |
+|---|---|
+| Map | Hand-built SVG (equirectangular, 2000×1000) from Natural Earth GeoJSON |
+| Interaction | Vanilla JavaScript — no Leaflet, no D3, no frameworks |
+| News | Daily feeds from major outlets (NYT etc.), fetched by a scheduled script |
+| Hosting | GitHub Pages (this repo) |
 
-每次 `Scripts/fetch_news.py` 重新生成地图后，**重新发布一次**：
+## 🔄 Updates
+
+The map rebuilds and re-deploys automatically every morning (a scheduled job copies the generated HTML here and pushes). You can also run it manually:
 
 ```bash
 cd /Users/celinezl/Desktop/Publish/world-news-map
 cp ../../News/world-news-map.html index.html
-git add index.html
-git commit -m "update map"
-git push
+git add -A && git commit -m "update map" && git push
 ```
 
-（想让我帮你把这个更新也加进每天 08:30 的自动任务里，随时说！）
+## 📄 License
+
+The news links belong to their respective publishers. Map borders: Natural Earth (public domain). Code: free to use.
