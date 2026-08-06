@@ -1,6 +1,6 @@
 # 🌍 World News Map
 
-A **live world map of today's top news** — war, economy, climate, science, tech, politics, sports and drugs. Click any dot or country border to read the story; zoom in anywhere with your scroll wheel; flip to dark mode with one tap.
+A **live world map of today's top news** — war, economy, climate, science, tech, politics and sports. Click any dot or country border to read the story; zoom in anywhere with your scroll wheel; flip to dark mode with one tap.
 
 **👉 Live at: https://sergeantray.github.io/world-map-news/**
 
